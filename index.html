@@ -1,0 +1,294 @@
+<!-- filename: portfolio.html -->
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio — [Meyar Nam]</title>
+    <meta
+      name="description"
+      content="Simple and clean personal portfolio built with HTML, Tailwind CSS and vanilla JS."
+    />
+
+    <!-- Tailwind CDN (for quick prototype) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* small custom touches */
+      :root {
+        --accent: black; /* violet */
+      }
+      .accent {
+        color: var(--accent);
+      }
+      .accent-bg {
+        background-color: var(--accent);
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-800 antialiased">
+    <!-- Container -->
+    <div class="min-h-screen flex flex-col">
+      <!-- NAV -->
+      <header class="border-b">
+        <div
+          class="container mx-auto px-6 py-4 flex items-center justify-between"
+        >
+          <div class="flex items-center gap-3">
+            <!-- Logo / Name -->
+            <div
+              class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-300 to-violet-400 flex items-center justify-center text-white font-semibold"
+            >
+              S
+            </div>
+            <div>
+              <h1 class="text-lg font-semibold">Shammi</h1>
+              <p class="text-xs text-gray-500">Designer</p>
+            </div>
+          </div>
+
+          <!-- simple nav (no external links) -->
+          <nav class="hidden md:flex gap-6 text-sm">
+            <a href="#about" class="hover:underline">About</a>
+            <a href="#skills" class="hover:underline">Skills</a>
+            <a href="#projects" class="hover:underline">Projects</a>
+            <a href="#contact" class="hover:underline">Contact</a>
+          </nav>
+
+          <!-- mobile menu button -->
+          <div class="md:hidden">
+            <button
+              id="menuBtn"
+              aria-label="open menu"
+              class="p-2 rounded-md border"
+            >
+              <svg
+                id="menuIcon"
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- mobile nav panel -->
+        <div id="mobileNav" class="md:hidden hidden border-t">
+          <div class="px-6 py-4 flex flex-col gap-3">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- HERO -->
+      <main class="flex-1">
+        <section
+          class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+        >
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold leading-tight">
+              Hi, I'm <span class="accent">Shammi</span>
+            </h2>
+            <p class="mt-4 text-gray-600">
+              A simple and clean portfolio made to present skills and a few
+              projects. Designed to be easy to read and share.
+            </p>
+
+            <div class="mt-6 flex gap-3">
+              <a
+                href="#projects"
+                class="px-4 py-2 rounded-md border font-medium"
+                >My Projects</a
+              >
+              <a
+                href="#contact"
+                class="px-4 py-2 rounded-md accent-bg text-white font-medium"
+                >Contact</a
+              >
+            </div>
+
+            <!-- quick info card -->
+            <div class="mt-6 p-4 border rounded-md bg-gray-50 max-w-md">
+              <p class="text-sm text-gray-600">
+                Location: Chittagong,Rangunia Bangladesh
+              </p>
+              <p class="text-sm text-gray-600">
+                Email: <span class="font-medium">youremail@example.com</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- simple avatar placeholder -->
+          <div class="flex items-center justify-center">
+            <div
+              class="w-56 h-56 rounded-full bg-gradient-to-br from-pink-200 to-violet-300 flex flex-col items-center justify-center shadow-lg"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-24 w-24 text-white opacity-90"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="white"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM6 20c0-3.31 2.69-6 6-6s6 2.69 6 6"
+                />
+              </svg>
+              <p class="mt-2 text-white text-sm">
+                <img src="images/DJ shammi.jpg" alt="" />
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="border-t">
+          <div class="container mx-auto px-6 py-10">
+            <h3 class="text-2xl font-semibold">About Me</h3>
+            <p class="mt-3 text-gray-600 max-w-2xl">
+              Hi! I’m a student from the CSE (Computer Science and Engineering)
+              department. I’m still learning and exploring new things in tech. I
+              like to spend time understanding how websites and apps work, and
+              sometimes I try to make small projects just for fun. I’m not an
+              expert yet, but I’m curious, and I enjoy learning step by step
+            </p>
+          </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="border-t">
+          <div class="container mx-auto px-6 py-10">
+            <h3 class="text-2xl font-semibold">Skills</h3>
+            <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-xl">
+              <div class="p-3 border rounded-md text-center">HTML</div>
+              <div class="p-3 border rounded-md text-center">CSS</div>
+              <div class="p-3 border rounded-md text-center">Tailwind</div>
+              <div class="p-3 border rounded-md text-center">JavaScript</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="border-t">
+          <div class="container mx-auto px-6 py-10">
+            <h3 class="text-2xl font-semibold">Projects</h3>
+            <p class="mt-2 text-gray-600">
+              Show 2–3 small projects with short descriptions. Keep links
+              disabled if you don't want to publish yet.
+            </p>
+
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Project card -->
+              <article class="p-4 border rounded-md">
+                <h4 class="font-semibold">Project One</h4>
+                <p class="text-sm mt-2 text-gray-600">
+                  Simple website built with HTML & Tailwind. Purpose: practice
+                  layout and responsive design.
+                </p>
+                <div class="mt-3 text-sm text-gray-500">Role: Developer</div>
+              </article>
+
+              <article class="p-4 border rounded-md">
+                <h4 class="font-semibold">Project Two</h4>
+                <p class="text-sm mt-2 text-gray-600">
+                  A small JavaScript app that demonstrates interaction and form
+                  handling.
+                </p>
+                <div class="mt-3 text-sm text-gray-500">Role: Developer</div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="border-t">
+          <div class="container mx-auto px-6 py-10">
+            <h3 class="text-2xl font-semibold">Contact</h3>
+            <p class="mt-2 text-gray-600 max-w-2xl">
+              If you want to keep this private and "show only to sir", simply
+              don't publish online and share this file directly with them.
+            </p>
+
+            <form id="contactForm" class="mt-6 max-w-md grid gap-3">
+              <label class="text-sm">Name</label>
+              <input
+                type="text"
+                id="name"
+                class="p-2 border rounded"
+                placeholder="Your name"
+              />
+
+              <label class="text-sm">Message</label>
+              <textarea
+                id="message"
+                class="p-2 border rounded"
+                rows="4"
+                placeholder="Write a short message"
+              ></textarea>
+
+              <button
+                type="submit"
+                class="px-4 py-2 rounded-md accent-bg text-white font-medium"
+              >
+                Send
+              </button>
+
+              <p id="formMsg" class="text-sm text-green-600 hidden">
+                Message sent (demo).
+              </p>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="border-t">
+        <div
+          class="container mx-auto px-6 py-6 text-center text-sm text-gray-500"
+        >
+          Make by Shammi — All rights are reserved 2025
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileNav = document.getElementById("mobileNav");
+      let open = false;
+      menuBtn &&
+        menuBtn.addEventListener("click", () => {
+          open = !open;
+          mobileNav.classList.toggle("hidden", !open);
+        });
+
+      // Simple contact form behaviour (demo only)
+      const contactForm = document.getElementById("contactForm");
+      contactForm &&
+        contactForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          // This is a demo. Replace with real email sending if needed.
+          document.getElementById("formMsg").classList.remove("hidden");
+          setTimeout(
+            () => document.getElementById("formMsg").classList.add("hidden"),
+            3000
+          );
+          contactForm.reset();
+        });
+    </script>
+  </body>
+</html>
